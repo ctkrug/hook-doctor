@@ -582,6 +582,87 @@ a {
   color: var(--success);
 }
 
+/* Below-the-fold editorial copy — the SEO guide, FAQ, CTA, and footer. */
+.page-extra {
+  border-top: 2px solid var(--text);
+  margin-top: var(--space-8);
+}
+
+.page-extra-inner {
+  max-width: 68ch;
+  margin-inline: auto;
+  padding: var(--space-8) var(--space-2) var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .page-extra-inner {
+    padding-inline: var(--space-4);
+  }
+}
+
+.guide-title {
+  font-size: clamp(1.4rem, 1.1rem + 1.4vw, 1.9rem);
+  margin-bottom: var(--space-2);
+}
+
+.guide p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: var(--space-2);
+}
+
+.guide em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.cta-block {
+  display: flex;
+  justify-content: center;
+  padding-block: var(--space-6);
+}
+
+.cta-github {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--space-4);
+}
+
+.faq {
+  margin-top: var(--space-4);
+}
+
+.faq dt {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-top: var(--space-3);
+}
+
+.faq dd {
+  margin: var(--space-1) 0 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.site-footer {
+  margin-top: var(--space-8);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(33, 28, 21, 0.16);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.site-footer a {
+  color: var(--accent-support);
+  font-weight: 600;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .manuscript-sentence.is-flagged {
     animation: none;
