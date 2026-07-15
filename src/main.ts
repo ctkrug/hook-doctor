@@ -22,9 +22,17 @@ const COPY_FEEDBACK_MS = 1500;
 const SHELL = `
   <header class="masthead">
     <h1 class="wordmark">Hook Doct<span class="mark-o">o</span>r</h1>
-    <p class="tagline">
-      Paste your opening line and see exactly what famous first lines do that yours doesn't.
-    </p>
+    <div class="masthead-meta">
+      <p class="tagline">
+        Paste your opening line and see exactly what famous first lines do that yours doesn't.
+      </p>
+      <a
+        class="masthead-github"
+        href="https://github.com/ctkrug/hook-doctor"
+        target="_blank"
+        rel="noopener"
+      >View source on GitHub &#8599;</a>
+    </div>
   </header>
   <main class="workspace">
     <section class="panel manuscript-panel" aria-label="Your manuscript">
