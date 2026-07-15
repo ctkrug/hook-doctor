@@ -44,7 +44,10 @@ export function renderRuleCards(rules: Diagnosis["rules"]): string {
   return `<ul class="rule-cards">${rules.map(renderRuleCard).join("")}</ul>`;
 }
 
-export function renderComparison(matched: CorpusEntry, gaps: RuleGap[]): string {
+export function renderComparison(
+  matched: CorpusEntry,
+  gaps: RuleGap[],
+): string {
   const gapList =
     gaps.length > 0
       ? `<ul class="comparison-gaps">${gaps

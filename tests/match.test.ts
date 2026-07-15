@@ -17,21 +17,29 @@ describe("findClosestMatch", () => {
       title: "Near",
       author: "Test",
       text: "near",
-      diagnosis: { input: "near", hookScore: 50, rules: [
-        { id: "a", label: "A", score: 50, detail: "" },
-        { id: "b", label: "B", score: 50, detail: "" },
-        { id: "c", label: "C", score: 50, detail: "" },
-      ] },
+      diagnosis: {
+        input: "near",
+        hookScore: 50,
+        rules: [
+          { id: "a", label: "A", score: 50, detail: "" },
+          { id: "b", label: "B", score: 50, detail: "" },
+          { id: "c", label: "C", score: 50, detail: "" },
+        ],
+      },
     };
     const far: CorpusEntry = {
       title: "Far",
       author: "Test",
       text: "far",
-      diagnosis: { input: "far", hookScore: 0, rules: [
-        { id: "a", label: "A", score: 0, detail: "" },
-        { id: "b", label: "B", score: 0, detail: "" },
-        { id: "c", label: "C", score: 0, detail: "" },
-      ] },
+      diagnosis: {
+        input: "far",
+        hookScore: 0,
+        rules: [
+          { id: "a", label: "A", score: 0, detail: "" },
+          { id: "b", label: "B", score: 0, detail: "" },
+          { id: "c", label: "C", score: 0, detail: "" },
+        ],
+      },
     };
     const target: Diagnosis = {
       input: "target",
@@ -46,8 +54,18 @@ describe("findClosestMatch", () => {
   });
 
   it("breaks ties deterministically by returning the first equally-close entry", () => {
-    const a: CorpusEntry = { title: "A", author: "T", text: "a", diagnosis: diagnose("It was a dark night.") };
-    const b: CorpusEntry = { title: "B", author: "T", text: "b", diagnosis: diagnose("It was a dark night.") };
+    const a: CorpusEntry = {
+      title: "A",
+      author: "T",
+      text: "a",
+      diagnosis: diagnose("It was a dark night."),
+    };
+    const b: CorpusEntry = {
+      title: "B",
+      author: "T",
+      text: "b",
+      diagnosis: diagnose("It was a dark night."),
+    };
     expect(findClosestMatch(diagnose("It was a dark night."), [a, b])).toBe(a);
   });
 

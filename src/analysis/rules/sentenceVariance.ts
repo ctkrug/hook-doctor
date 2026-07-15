@@ -62,7 +62,11 @@ export function sentenceVariance(input: string): RuleResult {
   }
 
   const coefficientOfVariation = stddev(counts, avg) / avg;
-  const score = clamp(Math.round(coefficientOfVariation * VARIANCE_SCALE), 0, 100);
+  const score = clamp(
+    Math.round(coefficientOfVariation * VARIANCE_SCALE),
+    0,
+    100,
+  );
 
   const detail =
     score >= 70

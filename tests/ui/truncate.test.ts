@@ -4,7 +4,11 @@ import { truncateToWordLimit } from "../../src/ui/truncate";
 describe("truncateToWordLimit", () => {
   it("returns the original text untouched when under the limit", () => {
     const result = truncateToWordLimit("one two three", 5);
-    expect(result).toEqual({ text: "one two three", wordCount: 3, truncated: false });
+    expect(result).toEqual({
+      text: "one two three",
+      wordCount: 3,
+      truncated: false,
+    });
   });
 
   it("truncates to exactly the limit when over it", () => {

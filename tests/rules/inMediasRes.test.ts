@@ -9,7 +9,9 @@ describe("inMediasRes", () => {
   });
 
   it("scores scene-setting stalls in the bottom half", () => {
-    const result = inMediasRes("It was a nice day and Sarah walked to the store.");
+    const result = inMediasRes(
+      "It was a nice day and Sarah walked to the store.",
+    );
     expect(result.score).toBeLessThan(50);
     expect(result.detail).toContain("It was");
   });
@@ -21,7 +23,9 @@ describe("inMediasRes", () => {
   });
 
   it("scores an action verb within the first few words in the top half", () => {
-    const result = inMediasRes("Sarah grabbed the railing as the train lurched.");
+    const result = inMediasRes(
+      "Sarah grabbed the railing as the train lurched.",
+    );
     expect(result.score).toBeGreaterThan(60);
     expect(result.detail).toMatch(/grabbed/i);
   });

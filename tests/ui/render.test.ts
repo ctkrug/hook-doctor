@@ -67,7 +67,12 @@ describe("renderComparison", () => {
 
   it("lists flagged gaps when present", () => {
     const gaps: RuleGap[] = [
-      { id: "in-medias-res", label: "In Medias Res", userScore: 30, matchScore: 85 },
+      {
+        id: "in-medias-res",
+        label: "In Medias Res",
+        userScore: 30,
+        matchScore: 85,
+      },
     ];
     const html = renderComparison(matched, gaps);
     expect(html).toContain("In Medias Res");
@@ -87,7 +92,9 @@ describe("renderManuscriptPreview", () => {
   });
 
   it("includes an ink-stroke svg for a flagged annotation", () => {
-    const diagnosis = diagnose("It was a nice day and Sarah walked to the store.");
+    const diagnosis = diagnose(
+      "It was a nice day and Sarah walked to the store.",
+    );
     const annotation = buildAnnotation(diagnosis);
     const html = renderManuscriptPreview(diagnosis, annotation);
     expect(html).toContain("ink-stroke");

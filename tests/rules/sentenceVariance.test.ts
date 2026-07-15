@@ -29,7 +29,9 @@ describe("sentenceVariance", () => {
   });
 
   it("names the shortest and longest sentence lengths in the detail", () => {
-    const result = sentenceVariance("Hi. This sentence has exactly seven words in it.");
+    const result = sentenceVariance(
+      "Hi. This sentence has exactly seven words in it.",
+    );
     expect(result.detail).toMatch(/\d+/);
   });
 });
