@@ -1,18 +1,151 @@
 /*
- * Placeholder styling only. Full visual direction (fonts, palette, layout)
- * follows docs/DESIGN.md and lands in BUILD.
+ * Manuscript editorial design system — tokens and values from docs/DESIGN.md.
+ * Warm paper, black ink, red pen. See docs/DESIGN.md before changing any of
+ * these values.
  */
+
+:root {
+  --bg: #f3eee1;
+  --surface-1: #fffdf7;
+  --surface-2: #e9e0cb;
+  --text: #211c15;
+  --text-muted: #6e6455;
+  --accent: #b0241d;
+  --accent-support: #8a6d1f;
+  --success: #3c6b3e;
+  --danger: #b0241d;
+
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+
+  --radius: 3px;
+  --shadow-paper:
+    0 1px 2px rgba(33, 28, 21, 0.08), 0 8px 24px rgba(33, 28, 21, 0.1);
+
+  --motion-ui: 180ms ease-out;
+  --motion-ink: 180ms ease-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  padding: 2rem;
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(
+      ellipse 900px 500px at 15% -10%,
+      rgba(176, 36, 29, 0.05),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 700px 500px at 100% 0%,
+      rgba(138, 109, 31, 0.06),
+      transparent 55%
+    );
+  -webkit-font-smoothing: antialiased;
 }
 
-textarea {
-  display: block;
-  width: 100%;
-  max-width: 40rem;
-  min-height: 6rem;
-  margin-block: 1rem;
+#app {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: var(--space-3) var(--space-2) var(--space-8);
+}
+
+@media (min-width: 768px) {
+  #app {
+    padding-inline: var(--space-4);
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* Masthead — the magazine nameplate. */
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-3);
+  border-bottom: 2px solid var(--text);
+  margin-bottom: var(--space-4);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15em;
+}
+
+.wordmark .mark-o {
+  position: relative;
+  display: inline-block;
+}
+
+.wordmark .mark-o::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 0.85em;
+  height: 0.85em;
+  border: 0.09em solid var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  pointer-events: none;
+}
+
+.tagline {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 32ch;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .masthead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+
+  .tagline {
+    text-align: left;
+  }
 }
