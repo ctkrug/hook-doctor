@@ -20,11 +20,16 @@ neon-accent utilities — a light, paper-toned editorial page stands out next to
 | `--surface-1`      | `#FFFDF7` | manuscript card (the textarea's paper)                     |
 | `--surface-2`      | `#E9E0CB` | secondary panel (score card, corpus match)                 |
 | `--text`           | `#211C15` | body ink                                                   |
-| `--text-muted`     | `#6E6455` | captions, helper text                                      |
+| `--text-muted`     | `#5C5344` | captions, helper text                                      |
 | `--accent`         | `#B0241D` | the red pen — annotations, score highlights, primary CTA   |
-| `--accent-support` | `#8A6D1F` | mustard/gold — secondary highlight, the corpus-match badge |
+| `--accent-support` | `#7C611B` | mustard/gold — secondary highlight, the corpus-match badge |
 | `--success`        | `#3C6B3E` | strong score / approval stamp green                        |
 | `--danger`         | `#B0241D` | reuses accent — the red pen doubles as the warning color   |
+
+`--text-muted` and `--accent-support` are a shade darker than the original brief
+(`#6E6455` / `#8A6D1F`): an automated axe-core pass (BUILD) found both fell just under the
+4.5:1 text contrast floor against `--surface-2`, so they were darkened until they cleared it —
+still read as the same warm muted brown / mustard-gold at a glance.
 
 **Type pairing:** `Playfair Display` (display serif — wordmark, H1, the score number) paired
 with `IBM Plex Sans` (UI font — body copy, textarea, buttons, labels). Both from Google Fonts
