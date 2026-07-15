@@ -53,9 +53,16 @@ width with generous padding rather than shrinking to fit.
 
 Red-ink marginalia: when a rule flags something (e.g. a weak opener), a short red annotation
 appears in the margin next to the relevant sentence — not just a score in a panel — styled with
-a hand-drawn-feeling underline/circle SVG stroke that draws on with the 180ms animation. This is
-the flourish that makes the "doctor" metaphor land: the reader sees their own sentence marked up,
-not just a number in a box.
+a hand-drawn-feeling wavy underline that draws on with the 180ms animation (color fades in from
+transparent to `--accent`). This is the flourish that makes the "doctor" metaphor land: the
+reader sees their own sentence marked up, not just a number in a box.
+
+Implementation note (BUILD): the underline is a `text-decoration-line: underline` /
+`text-decoration-style: wavy` on the flagged sentence's `<span>`, not an absolutely-positioned
+SVG stroke as originally specified. An SVG overlay only tracks a single line box, so a sentence
+that wraps onto two lines got its underline stranded under just the last line's words — visually
+pointing at the wrong text. `text-decoration` paints correctly per line box on wrap, so it was
+swapped in; the animated draw-on and hand-drawn (wavy) feel are preserved.
 
 The wordmark "Hook Doctor" sets "Hook" in the display serif and treats the second "o" in
 "Doctor" as a small red-ink caret/circle mark, like a proofreading symbol.

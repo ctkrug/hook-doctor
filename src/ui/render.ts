@@ -78,14 +78,11 @@ export function renderManuscriptPreview(
   const spans = sentences
     .map((sentence, index) => {
       const text = escapeHtml(sentence);
-      if (!annotation || index !== annotation.sentenceIndex) {
-        return `<span class="manuscript-sentence">${text}</span>`;
-      }
-      const isFlagged = annotation.tone === "flag";
-      const stroke = isFlagged
-        ? `<svg class="ink-stroke" viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 Q 25 1, 50 5 T 98 5" /></svg>`
-        : "";
-      return `<span class="manuscript-sentence${isFlagged ? " is-flagged" : ""}">${text}${stroke}</span>`;
+      const isFlagged =
+        annotation &&
+        index === annotation.sentenceIndex &&
+        annotation.tone === "flag";
+      return `<span class="manuscript-sentence${isFlagged ? " is-flagged" : ""}">${text}</span>`;
     })
     .join(" ");
 
