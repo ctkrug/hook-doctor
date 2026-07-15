@@ -5,6 +5,9 @@
   "description": "Score your opening line against the structural patterns famous first lines use.",
   "type": "module",
   "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.json --noEmit && vite build",
