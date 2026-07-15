@@ -26,17 +26,19 @@ Writers workshop their hooks by ear, which means the feedback is either "I liked
 Hook Doctor turns three well-documented craft patterns into a repeatable, explainable score, and
 grounds every score in a real published counter-example instead of an abstract number.
 
-## Planned features
+## Features
 
-- [ ] Paste-and-score editor with instant composite Hook Score
-- [ ] Per-rule breakdown (in medias res / imagery density / sentence variance)
-- [ ] Benchmark corpus of famous opening lines with precomputed scores
-- [ ] Nearest-match famous opener shown side-by-side with your text
-- [ ] Live re-scoring as you type
-- [ ] Fully static, deployable as a single-page site
+- [x] Paste-and-score editor with instant composite Hook Score
+- [x] Per-rule breakdown (in medias res / imagery density / sentence variance)
+- [x] Benchmark corpus of 30+ famous opening lines with precomputed scores
+- [x] Nearest-match famous opener shown side-by-side with your text, gaps flagged
+- [x] Live re-scoring as you type (400ms debounce), plus an explicit Diagnose button
+- [x] Copy-result control with a plain-text score summary
+- [x] Fully static, deployable as a single-page site under a subpath
 
-See [`docs/VISION.md`](docs/VISION.md) for the full design rationale and
-[`docs/BACKLOG.md`](docs/BACKLOG.md) for the build plan.
+See [`docs/VISION.md`](docs/VISION.md) for the full design rationale,
+[`docs/DESIGN.md`](docs/DESIGN.md) for the visual direction, [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+for how the code is organized, and [`docs/BACKLOG.md`](docs/BACKLOG.md) for the build plan.
 
 ## Stack
 
@@ -48,8 +50,13 @@ Vanilla TypeScript, built with Vite, zero runtime dependencies. Tests run with V
 npm install
 npm run dev       # local dev server
 npm test          # run the test suite
-npm run build     # produce a static dist/ build
+npm run lint      # eslint
+npm run format    # prettier --write
+npm run build     # typecheck + produce a static dist/ build
 ```
+
+`npm run build` outputs a self-contained `dist/` that only uses relative asset paths, so it can
+be served from any subpath (e.g. `apps.charliekrug.com/hook-doctor/`) without rewriting.
 
 ## License
 
