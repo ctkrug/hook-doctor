@@ -1,63 +1,91 @@
 # Hook Doctor
 
-Paste your opening line — or your whole first paragraph — and get a diagnosis. Hook Doctor
-scores it against the structural patterns that famous first lines actually use, then shows you
-a real published opener that nails what yours is missing.
+**▶ Live demo: [apps.charliekrug.com/hook-doctor](https://apps.charliekrug.com/hook-doctor/)**
 
-## What it does
+[![CI](https://github.com/ctkrug/hook-doctor/actions/workflows/ci.yml/badge.svg)](https://github.com/ctkrug/hook-doctor/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Most "is my hook good?" advice is vibes. Hook Doctor is a small rules engine that measures the
-three structural traits that separate a flat opener from a magnetic one:
+Score your opening line against the classics. Paste your first line, or your whole first
+paragraph, and Hook Doctor scores it against the structural patterns famous first lines actually
+use, then shows you a real published opener that nails what yours is missing.
 
-- **In medias res** — does the line drop the reader into motion/conflict, or does it warm up
-  with scene-setting first?
-- **Concrete imagery density** — how many specific, sensory nouns carry the sentence versus
-  abstract filler?
-- **Sentence-length variance** — do the surrounding sentences vary in rhythm, or does everything
-  run the same length?
+## Who it's for
 
-Your text gets scored on each axis, a composite Hook Score, and matched against the closest
-famous opening line in the benchmark corpus — so you can see exactly what a stronger version of
-your own sentence would look like.
+Novelists and short-story writers revising the one sentence that has to do the most work: the
+opening line an agent, editor, or reader judges in seconds. Feedback on a hook is usually
+subjective ("I liked it", "hook me faster"). Hook Doctor makes it concrete and repeatable.
 
-## Why
+## What it measures
 
-Writers workshop their hooks by ear, which means the feedback is either "I liked it" or nothing.
-Hook Doctor turns three well-documented craft patterns into a repeatable, explainable score, and
-grounds every score in a real published counter-example instead of an abstract number.
+Three structural traits, each grounded in real craft advice and each measurable from plain text:
 
-## Features
+- **In medias res.** Does the line drop the reader into motion, conflict, or dialogue, or does it
+  warm up with scene-setting first ("It was...", "There was...")?
+- **Concrete imagery.** How much of the sentence rides on specific, sensory nouns versus abstract
+  filler like "situation" or "feeling"?
+- **Sentence rhythm.** Do the first few sentences vary in length, or does everything run the same
+  and read flat?
 
-- [x] Paste-and-score editor with instant composite Hook Score
-- [x] Per-rule breakdown (in medias res / imagery density / sentence variance)
-- [x] Benchmark corpus of 30+ famous opening lines with precomputed scores
-- [x] Nearest-match famous opener shown side-by-side with your text, gaps flagged
-- [x] Live re-scoring as you type (400ms debounce), plus an explicit Diagnose button
-- [x] Copy-result control with a plain-text score summary
-- [x] Fully static, deployable as a single-page site under a subpath
+Each rule returns a 0 to 100 score with a plain-English reason, and the three roll up into one
+weighted **Hook Score**. Every rule is a transparent heuristic, so you can read exactly why you
+scored what you scored and disagree when the disagreement makes sense.
 
-See [`docs/VISION.md`](docs/VISION.md) for the full design rationale,
-[`docs/DESIGN.md`](docs/DESIGN.md) for the visual direction, [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
-for how the code is organized, and [`docs/BACKLOG.md`](docs/BACKLOG.md) for the build plan.
+## The benchmark corpus
 
-## Stack
+Your text is matched against the closest opener in a corpus of 34 famous first lines (Melville to
+Morrison to Gibson), scored by the exact same rules run on your input. So "your imagery is low"
+becomes "here is what a high-imagery opener looks like next to yours."
 
-Vanilla TypeScript, built with Vite, zero runtime dependencies. Tests run with Vitest.
+## Sample output
+
+Paste a flat opener and you get a diagnosis, not just a number:
+
+```
+Hook Score: 38 / 100
+
+In Medias Res   30   Opens with the scene-setting stall "It was" — describes
+                     conditions instead of starting the action.
+Concrete Imagery 50  No strongly concrete or abstract nouns detected.
+Sentence Rhythm  33  Sentence lengths stay close (7-11 words) — uniform rhythm
+                     reads flat.
+
+Closest famous match: "It was the best of times, it was the worst of times."
+                      A Tale of Two Cities, Charles Dickens
+```
 
 ## Development
 
 ```sh
 npm install
-npm run dev       # local dev server
-npm test          # run the test suite
-npm run lint      # eslint
-npm run format    # prettier --write
-npm run build     # typecheck + produce a static dist/ build
+npm run dev            # local dev server
+npm test               # run the test suite (Vitest)
+npm run test:coverage  # coverage report
+npm run lint           # eslint
+npm run format         # prettier --write
+npm run build          # typecheck + produce a static dist/ build
 ```
 
-`npm run build` outputs a self-contained `dist/` that only uses relative asset paths, so it can
-be served from any subpath (e.g. `apps.charliekrug.com/hook-doctor/`) without rewriting.
+`npm run build` outputs a self-contained `dist/` that uses only relative asset paths, so it can
+be served from any subpath (such as `apps.charliekrug.com/hook-doctor/`) without rewriting.
+
+## Stack
+
+Vanilla TypeScript, built with Vite, zero runtime dependencies. Everything runs client-side, so
+nothing you paste ever leaves the browser.
+
+## Docs
+
+See [`docs/VISION.md`](docs/VISION.md) for the design rationale,
+[`docs/DESIGN.md`](docs/DESIGN.md) for the visual direction,
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for how the code is organized, and
+[`docs/BACKLOG.md`](docs/BACKLOG.md) for the build plan.
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE).
+MIT, see [`LICENSE`](LICENSE).
+
+---
+
+More of Charlie's projects: [apps.charliekrug.com](https://apps.charliekrug.com)
+</content>
+</invoke>
