@@ -91,21 +91,21 @@ describe("renderManuscriptPreview", () => {
     expect(renderManuscriptPreview(diagnose(""), null)).toBe("");
   });
 
-  it("includes an ink-stroke svg for a flagged annotation", () => {
+  it("marks the flagged sentence with the is-flagged class for a flagged annotation", () => {
     const diagnosis = diagnose(
       "It was a nice day and Sarah walked to the store.",
     );
     const annotation = buildAnnotation(diagnosis);
     const html = renderManuscriptPreview(diagnosis, annotation);
-    expect(html).toContain("ink-stroke");
+    expect(html).toContain("is-flagged");
     expect(html).toContain("margin-note");
   });
 
-  it("omits the ink-stroke svg for an ok annotation but still shows the note", () => {
+  it("omits the is-flagged class for an ok annotation but still shows the note", () => {
     const diagnosis = diagnose('"Run!" she screamed as the window shattered.');
     const annotation = buildAnnotation(diagnosis);
     const html = renderManuscriptPreview(diagnosis, annotation);
-    expect(html).not.toContain("ink-stroke");
+    expect(html).not.toContain("is-flagged");
     expect(html).toContain("margin-note tone-ok");
   });
 });
