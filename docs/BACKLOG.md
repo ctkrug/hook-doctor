@@ -44,19 +44,19 @@ acceptance criteria — no vibes.
 
 ## Epic 2 — Benchmark Corpus & Comparison
 
-### [ ] 2.1 Curate a benchmark corpus of famous opening lines
+### [x] 2.1 Curate a benchmark corpus of famous opening lines
 
-- [ ] `src/data` contains 30+ entries, each with source title, author, and opening text.
-- [ ] Every entry's rule scores are computed by the same scoring functions used on user input —
+- [x] `src/data` contains 30+ entries, each with source title, author, and opening text.
+- [x] Every entry's rule scores are computed by the same scoring functions used on user input —
       no hand-typed scores.
-- [ ] A test asserts the corpus loads and every entry has all three rule scores populated.
+- [x] A test asserts the corpus loads and every entry has all three rule scores populated.
 
-### [ ] 2.2 Nearest-match algorithm
+### [x] 2.2 Nearest-match algorithm
 
-- [ ] Given a diagnosis, the match function returns the single closest corpus entry by
+- [x] Given a diagnosis, the match function returns the single closest corpus entry by
       score-vector distance.
-- [ ] Ties are broken by a documented, deterministic rule.
-- [ ] A test with a synthetic diagnosis identical to a known corpus entry's scores returns that
+- [x] Ties are broken by a documented, deterministic rule.
+- [x] A test with a synthetic diagnosis identical to a known corpus entry's scores returns that
       exact entry.
 
 ### [ ] 2.3 Side-by-side comparison UI
