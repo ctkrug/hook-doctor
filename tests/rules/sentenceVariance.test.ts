@@ -34,4 +34,10 @@ describe("sentenceVariance", () => {
     );
     expect(result.detail).toMatch(/\d+/);
   });
+
+  it("handles multi-sentence input with no letter tokens without throwing", () => {
+    const result = sentenceVariance("42. 99! 7?");
+    expect(result.score).toBe(0);
+    expect(result.detail).toMatch(/no words/i);
+  });
 });
