@@ -14,17 +14,17 @@ neon-accent utilities — a light, paper-toned editorial page stands out next to
 
 ## Tokens
 
-| Token | Value | Use |
-|---|---|---|
-| `--bg` | `#F3EEE1` | page background — warm cream paper |
-| `--surface-1` | `#FFFDF7` | manuscript card (the textarea's paper) |
-| `--surface-2` | `#E9E0CB` | secondary panel (score card, corpus match) |
-| `--text` | `#211C15` | body ink |
-| `--text-muted` | `#6E6455` | captions, helper text |
-| `--accent` | `#B0241D` | the red pen — annotations, score highlights, primary CTA |
+| Token              | Value     | Use                                                        |
+| ------------------ | --------- | ---------------------------------------------------------- |
+| `--bg`             | `#F3EEE1` | page background — warm cream paper                         |
+| `--surface-1`      | `#FFFDF7` | manuscript card (the textarea's paper)                     |
+| `--surface-2`      | `#E9E0CB` | secondary panel (score card, corpus match)                 |
+| `--text`           | `#211C15` | body ink                                                   |
+| `--text-muted`     | `#6E6455` | captions, helper text                                      |
+| `--accent`         | `#B0241D` | the red pen — annotations, score highlights, primary CTA   |
 | `--accent-support` | `#8A6D1F` | mustard/gold — secondary highlight, the corpus-match badge |
-| `--success` | `#3C6B3E` | strong score / approval stamp green |
-| `--danger` | `#B0241D` | reuses accent — the red pen doubles as the warning color |
+| `--success`        | `#3C6B3E` | strong score / approval stamp green                        |
+| `--danger`         | `#B0241D` | reuses accent — the red pen doubles as the warning color   |
 
 **Type pairing:** `Playfair Display` (display serif — wordmark, H1, the score number) paired
 with `IBM Plex Sans` (UI font — body copy, textarea, buttons, labels). Both from Google Fonts
