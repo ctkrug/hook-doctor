@@ -40,4 +40,10 @@ describe("sentenceVariance", () => {
     expect(result.score).toBe(0);
     expect(result.detail).toMatch(/no words/i);
   });
+
+  it("describes a score exactly at the strong-variance threshold as strong", () => {
+    const result = sentenceVariance("Run. She ran fast. Fire tore the gate.");
+    expect(result.score).toBe(70);
+    expect(result.detail).toMatch(/strong rhythmic variance/i);
+  });
 });
