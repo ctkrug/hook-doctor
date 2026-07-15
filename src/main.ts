@@ -21,7 +21,7 @@ const COPY_FEEDBACK_MS = 1500;
 
 const SHELL = `
   <header class="masthead">
-    <span class="wordmark">Hook Doct<span class="mark-o">o</span>r</span>
+    <h1 class="wordmark">Hook Doct<span class="mark-o">o</span>r</h1>
     <p class="tagline">
       Paste your opening line and see exactly what famous first lines do that yours doesn't.
     </p>
