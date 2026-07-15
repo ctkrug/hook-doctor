@@ -96,4 +96,23 @@ describe("main", () => {
     const copyButton = document.querySelector<HTMLButtonElement>("#copy")!;
     expect(copyButton.disabled).toBe(true);
   });
+
+  it("shows a truncation notice and still scores extremely long input without freezing", async () => {
+    await mountApp();
+    const input = document.querySelector<HTMLTextAreaElement>("#input")!;
+    const button = document.querySelector<HTMLButtonElement>("#diagnose")!;
+    const wordCount = document.querySelector<HTMLSpanElement>("#word-count")!;
+
+    const longInput = "word ".repeat(2500).trim();
+    input.value = longInput;
+    input.dispatchEvent(new Event("input"));
+    button.click();
+
+    expect(wordCount.textContent).toContain("2500 words");
+    expect(wordCount.textContent).toMatch(/first 2000/);
+    expect(wordCount.classList.contains("is-over-limit")).toBe(true);
+    expect(document.querySelector("#diagnosis-body")?.innerHTML).toContain(
+      "score-dial",
+    );
+  });
 });
