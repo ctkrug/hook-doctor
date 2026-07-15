@@ -1,0 +1,18 @@
+/*
+ * Placeholder styling only. Full visual direction (fonts, palette, layout)
+ * follows docs/DESIGN.md and lands in BUILD.
+ */
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  min-height: 6rem;
+  margin-block: 1rem;
+}
