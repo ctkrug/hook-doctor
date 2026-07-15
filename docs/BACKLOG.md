@@ -13,26 +13,26 @@ acceptance criteria — no vibes.
 - [ ] Clicking "Diagnose" with empty input shows a designed empty-state message, not a crash or
       blank panel.
 
-### [ ] 1.2 In-medias-res rule
+### [x] 1.2 In-medias-res rule
 
-- [ ] A sentence opening on dialogue or an action verb within the first few words scores in the
+- [x] A sentence opening on dialogue or an action verb within the first few words scores in the
       top half (> 60).
-- [ ] A sentence opening with a scene-setting stall ("It was...", "There was...") scores in the
+- [x] A sentence opening with a scene-setting stall ("It was...", "There was...") scores in the
       bottom half (< 50).
-- [ ] The rule's detail string names the specific word or construction that drove the score.
+- [x] The rule's detail string names the specific word or construction that drove the score.
 
-### [ ] 1.3 Concrete imagery density rule
+### [x] 1.3 Concrete imagery density rule
 
-- [ ] A sentence dense in concrete sensory nouns (e.g. blood, rain, glass, iron) scores higher
+- [x] A sentence dense in concrete sensory nouns (e.g. blood, rain, glass, iron) scores higher
       than a same-length sentence dense in abstract nouns (e.g. feeling, truth, reality).
-- [ ] The rule's detail names at least one concrete or abstract word it detected, when present.
+- [x] The rule's detail names at least one concrete or abstract word it detected, when present.
 
-### [ ] 1.4 Sentence-length variance rule + composite score
+### [x] 1.4 Sentence-length variance rule + composite score
 
-- [ ] Three-plus sentences of near-identical word count score low (< 40) on variance.
-- [ ] A mix of short and long sentences (e.g. 4 words then 22 words) scores high (> 70).
-- [ ] A single-sentence input degrades gracefully — a documented fallback score/detail, no crash.
-- [ ] The composite Hook Score is a weighted average of the three rule scores, always 0–100, and
+- [x] Three-plus sentences of near-identical word count score low (< 40) on variance.
+- [x] A mix of short and long sentences (e.g. 4 words then 22 words) scores high (> 70).
+- [x] A single-sentence input degrades gracefully — a documented fallback score/detail, no crash.
+- [x] The composite Hook Score is a weighted average of the three rule scores, always 0–100, and
       moves predictably when any one rule's score changes (covered by a unit test).
 
 ### [ ] 1.5 Design polish — diagnosis view
