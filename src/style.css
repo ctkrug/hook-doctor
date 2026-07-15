@@ -238,3 +238,122 @@ a {
   color: var(--accent);
   font-weight: 600;
 }
+
+/* Diagnosis panel */
+.diagnosis-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background-color: var(--surface-2);
+}
+
+.score-dial {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.score-dial-ring {
+  --pct: 0;
+  position: relative;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(
+    var(--score-color, var(--accent)) calc(var(--pct) * 1%),
+    rgba(33, 28, 21, 0.12) 0
+  );
+  transition: background 260ms ease-out;
+}
+
+.score-dial-ring::before {
+  content: "";
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--surface-1);
+}
+
+.score-dial-number {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: var(--text);
+}
+
+.score-dial-label {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.score-dial-headline {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Rule cards */
+.rule-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rule-card {
+  background-color: var(--surface-1);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  box-shadow:
+    0 1px 1px rgba(33, 28, 21, 0.06),
+    0 4px 12px rgba(33, 28, 21, 0.06);
+}
+
+.rule-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.rule-card-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.rule-card-score {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--score-color, var(--accent));
+}
+
+.rule-bar-track {
+  height: 6px;
+  border-radius: 999px;
+  background-color: rgba(33, 28, 21, 0.12);
+  overflow: hidden;
+  margin-bottom: var(--space-1);
+}
+
+.rule-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--score-color, var(--accent));
+  transition: width 260ms ease-out;
+}
+
+.rule-card-detail {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
