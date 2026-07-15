@@ -76,6 +76,7 @@ score-driven color stays in one place.
 npm install
 npm run dev     # vite dev server
 npm test        # vitest — tests live under tests/, mirroring src/
+npm run test:coverage  # vitest --coverage — line coverage, per-file breakdown
 npm run lint    # eslint
 npm run build   # tsc --noEmit + vite build → dist/ (relative paths, subpath-safe)
 ```
